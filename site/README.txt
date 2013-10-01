@@ -1,0 +1,1 @@
+For installation instructions go to http://blog.geotitles.com/php-login-script-documentation/

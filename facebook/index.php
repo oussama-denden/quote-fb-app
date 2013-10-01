@@ -45,6 +45,7 @@ $facebook = new Facebook(array(
 
 $dbm = new DBManager();
 $user_id = $facebook->getUser();
+echo $user_id;
 $user = null;
 if ($user_id) {
   try {
@@ -54,7 +55,7 @@ if ($user_id) {
 	$uid = idx($basic, 'id');
 	// Fetch the viewer's access token
 	$token = $facebook->getAccessToken();
-	$user = $dbm->addUser($uid, $token);
+	$user = $dbm->addUser($uid, $token, idx($basic, 'name'));
   } catch (FacebookApiException $e) {
     // If the call fails we check if we still have a user. The user will be
     // cleared if the error is because of an invalid accesstoken
@@ -219,7 +220,7 @@ $app_name = idx($app_info, 'name', '');
     </script>
 
     <header class="clearfix">
-      <?php if ($user != null) { ?>
+      <?php if (isset($user) ){ ?>
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
       <div>

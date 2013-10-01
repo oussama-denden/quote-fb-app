@@ -21,7 +21,7 @@ class AppInfo {
    */
   public static function appID() {
     //return getenv('FACEBOOK_APP_ID');
-	return "191086064348404";
+	return '447783201966791';
   }
 
   /**
@@ -29,7 +29,7 @@ class AppInfo {
    */
   public static function appSecret() {
     //return getenv('FACEBOOK_SECRET');
-	return "a2fa128caaf51b1b002a534d37bbd742";
+	return "b53ad97de146e5a0cf8b5c39642c09fd";
   }
 
   /**
